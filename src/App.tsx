@@ -1,21 +1,24 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { Navbar } from '@/components/landing/navbar'
-import { Hero } from '@/components/landing/hero'
-import { Services } from '@/components/landing/services'
-import { Features } from '@/components/landing/features'
-import { Testimonials } from '@/components/landing/testimonials'
-import { CTA } from '@/components/landing/cta'
-import { Footer } from '@/components/landing/footer'
+import Home from './pages/Home'
+import ServicesPage from './pages/ServicesPage'
+import AboutPage from './pages/AboutPage'
+import PortfolioPage from './pages/PortfolioPage'
+import ContactPage from './pages/ContactPage'
 
 export default function App() {
   return (
-    <main className="min-h-screen bg-background">
-      <Navbar />
-      <Hero />
-      <Services />
-      <Features />
-      <Testimonials />
-      <CTA />
-      <Footer />
-    </main>
+    <BrowserRouter>
+      <main className="min-h-screen bg-background">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/services" element={<ServicesPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/portfolio" element={<PortfolioPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
   )
 }
