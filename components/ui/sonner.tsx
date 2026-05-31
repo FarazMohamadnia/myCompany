@@ -1,7 +1,10 @@
+
 'use client'
 
-import { useTheme } from 'next-themes'
+// Local fallback for `next-themes` (not using Next.js runtime here)
 import { Toaster as Sonner, ToasterProps } from 'sonner'
+
+const useTheme = () => ({ theme: 'system' })
 
 const Toaster = ({ ...props }: ToasterProps) => {
   const { theme = 'system' } = useTheme()
