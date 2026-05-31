@@ -65,7 +65,9 @@ export function Navbar() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Button className="gap-2" asChild>
-              <NavLink to="/contact">درخواست مشاوره</NavLink>
+              <a href="tel:+989109275889">
+                درخواست مشاوره
+              </a>
             </Button>
           </div>
 
@@ -104,9 +106,11 @@ export function Navbar() {
                     <motion.span initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: index * 0.1 }}>{item.label}</motion.span>
                   </NavLink>
                 ))}
-                <Button className="mt-4 w-full">
-                  درخواست مشاوره
-                </Button>
+                <a href="tel:+989109275889">
+                  <Button className="mt-4 w-full">
+                     درخواست مشاوره
+                  </Button>
+                </a>
               </div>
             </motion.div>
           )}
