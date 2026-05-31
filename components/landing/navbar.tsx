@@ -2,13 +2,14 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import { NavLink } from 'react-router-dom'
 
 const navItems = [
-  { label: "صفحه اصلی", href: "#" },
-  { label: "خدمات", href: "#services" },
-  { label: "درباره ما", href: "#about" },
-  { label: "نمونه کارها", href: "#portfolio" },
-  { label: "تماس با ما", href: "#contact" },
+  { label: "صفحه اصلی", href: "/" },
+  { label: "خدمات", href: "/services" },
+  { label: "درباره ما", href: "/about" },
+  { label: "نمونه کارها", href: "/portfolio" },
+  { label: "تماس با ما", href: "/contact" },
 ];
 
 export function Navbar() {
@@ -48,22 +49,23 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item, index) => (
-              <motion.a
+              <NavLink
                 key={index}
-                href={item.href}
-                className="text-muted-foreground hover:text-foreground transition-colors relative group"
-                whileHover={{ y: -2 }}
+                to={item.href}
+                className={({ isActive }) =>
+                  `relative group transition-colors ${isActive ? 'text-foreground' : 'text-muted-foreground hover:text-foreground'}`
+                }
               >
-                {item.label}
+                <motion.span whileHover={{ y: -2 }}>{item.label}</motion.span>
                 <span className="absolute -bottom-1 right-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-              </motion.a>
+              </NavLink>
             ))}
           </div>
 
           {/* CTA Button */}
           <div className="hidden md:block">
-            <Button className="gap-2">
-              درخواست مشاوره
+            <Button className="gap-2" asChild>
+              <NavLink to="/contact">درخواست مشاوره</NavLink>
             </Button>
           </div>
 
@@ -93,17 +95,14 @@ export function Navbar() {
             >
               <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
                 {navItems.map((item, index) => (
-                  <motion.a
+                  <NavLink
                     key={index}
-                    href={item.href}
+                    to={item.href}
                     className="text-muted-foreground hover:text-foreground transition-colors py-2"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
-                    {item.label}
-                  </motion.a>
+                    <motion.span initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: index * 0.1 }}>{item.label}</motion.span>
+                  </NavLink>
                 ))}
                 <Button className="mt-4 w-full">
                   درخواست مشاوره
