@@ -37,12 +37,11 @@ export function CTA() {
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button size="lg" className="gap-2 px-8 py-6 text-lg">
-              شروع پروژه
+                تماس با ما
               <ArrowLeft className="w-5 h-5" />
             </Button>
             <Button variant="outline" size="lg" className="gap-2 px-8 py-6 text-lg">
-              <MessageCircle className="w-5 h-5" />
-              گفتگو با ما
+             پروژه ها 
             </Button>
           </div>
         </motion.div>
