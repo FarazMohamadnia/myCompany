@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import { 
-  Code2, 
-  Smartphone, 
-  Cloud, 
+  Code2,   
   Shield, 
   Cpu, 
-  LineChart 
+  LineChart, 
+  Bitcoin,
+  Target
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -15,14 +16,14 @@ const services = [
     description: "طراحی و توسعه نرم‌افزارهای اختصاصی با جدیدترین تکنولوژی‌ها",
   },
   {
-    icon: Smartphone,
-    title: "اپلیکیشن موبایل",
-    description: "ساخت اپلیکیشن‌های iOS و Android با بهترین تجربه کاربری",
+    icon: Bitcoin,
+    title: "بلاکچین",
+    description: "توسعه و راهکار های بلاکچینی برای کسب‌وکارهای نوآور",
   },
   {
-    icon: Cloud,
-    title: "سرویس‌های ابری",
-    description: "راه‌اندازی و مدیریت زیرساخت ابری برای کسب‌وکار شما",
+    icon: Target,
+    title: "ساخت محصول",
+    description: "خدمات پروداکت منیجمنت و توسعه محصول از ایده تا اجرا",
   },
   {
     icon: Shield,
@@ -90,6 +91,7 @@ export function Services() {
           viewport={{ once: true }}
         >
           {services.map((service, index) => (
+            <Link key={index} to={'/services'}>
             <motion.div
               key={index}
               variants={itemVariants}
@@ -121,6 +123,7 @@ export function Services() {
                 </motion.div>
               </div>
             </motion.div>
+            </Link>
           ))}
         </motion.div>
       </div>
