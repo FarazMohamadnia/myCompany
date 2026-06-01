@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, MessageCircle } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function CTA() {
   return (
@@ -36,13 +37,17 @@ export function CTA() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="gap-2 px-8 py-6 text-lg">
-                تماس با ما
-              <ArrowLeft className="w-5 h-5" />
-            </Button>
-            <Button variant="outline" size="lg" className="gap-2 px-8 py-6 text-lg">
-             پروژه ها 
-            </Button>
+            <a href="tel:+989109275889">
+              <Button size="lg" className="gap-2 px-8 py-6 text-lg">
+                  تماس با ما
+                <ArrowLeft className="w-5 h-5" />
+              </Button>
+            </a>
+            <Link to={'/portfolio'}>
+              <Button variant="outline" size="lg" className="gap-2 px-8 py-6 text-lg">
+               پروژه ها 
+              </Button>
+            </Link>
           </div>
         </motion.div>
       </div>
