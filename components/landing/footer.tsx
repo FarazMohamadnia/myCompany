@@ -7,32 +7,34 @@ import {
   Phone, 
   MapPin 
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const footerLinks = {
   services: [
-    { label: "توسعه نرم‌افزار", href: "#" },
-    { label: "اپلیکیشن موبایل", href: "#" },
-    { label: "سرویس ابری", href: "#" },
-    { label: "مشاوره فنی", href: "#" },
+    { label: "توسعه نرم‌افزار", href: "/services" },
+    { label: "توسعه بلاکچین", href: "/services" },
+    { label: "امنیت نرم افزار", href: "/services" },
+    { label: "مشاوره فنی", href: "/contact" },
   ],
   company: [
-    { label: "درباره ما", href: "#" },
-    { label: "تیم ما", href: "#" },
-    { label: "استخدام", href: "#" },
-    { label: "بلاگ", href: "#" },
+    { label: "درباره ما", href: "/about" },
+    { label: "تیم ما", href: "/about" },
+    { label: "نمونه کارها", href: "/portfolio" },
+    // { label: "استخدام", href: "#" },
+    // { label: "بلاگ", href: "#" },
   ],
   support: [
-    { label: "پشتیبانی", href: "#" },
+    // { label: "پشتیبانی", href: "#" },
     { label: "سوالات متداول", href: "#" },
     { label: "قوانین", href: "#" },
-    { label: "حریم خصوصی", href: "#" },
+    // { label: "حریم خصوصی", href: "#" },
   ],
 };
 
 const socialLinks = [
-  { icon: Instagram, href: "#", label: "اینستاگرام" },
-  { icon: Linkedin, href: "#", label: "لینکدین" },
-  { icon: Twitter, href: "#", label: "توییتر" },
+  // { icon: Instagram, href: "#", label: "اینستاگرام" },
+  // { icon: Linkedin, href: "#", label: "لینکدین" },
+  // { icon: Twitter, href: "#", label: "توییتر" },
 ];
 
 export function Footer() {
@@ -50,7 +52,7 @@ export function Footer() {
               <span className="text-primary">تکنو</span>ژن
             </motion.a>
             <p className="text-muted-foreground leading-relaxed mb-6 max-w-sm">
-              شرکت پیشرو در ارائه راهکارهای فناوری اطلاعات و خدمات نرم‌افزاری با بیش از ۱۰ سال تجربه
+              شرکت پیشرو در ارائه راهکارهای فناوری اطلاعات و خدمات نرم‌افزاری با بیش از ۶ سال تجربه
             </p>
             
             {/* Contact Info */}
@@ -61,11 +63,11 @@ export function Footer() {
               </a>
               <a href="tel:+982112345678" className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors">
                 <Phone className="w-5 h-5 text-primary" />
-                ۰۲۱-۱۲۳۴۵۶۷۸
+                ۰۹۱۰۹۲۷۵۸۸۹
               </a>
               <div className="flex items-center gap-3 text-muted-foreground">
                 <MapPin className="w-5 h-5 text-primary" />
-                تهران، خیابان ولیعصر، پلاک ۱۲۳
+                تهران، خیابان تهرانپارس 
               </div>
             </div>
           </div>
@@ -76,12 +78,12 @@ export function Footer() {
             <ul className="space-y-3">
               {footerLinks.services.map((link, index) => (
                 <li key={index}>
-                  <a
-                    href={link.href}
+                  <Link
+                    to={link.href}
                     className="text-muted-foreground hover:text-foreground transition-colors"
                   >
                     {link.label}
-                  </a>
+                  </Link>
                 </li>
               ))}
             </ul>
@@ -126,7 +128,7 @@ export function Footer() {
             © ۱۴۰۳ تکنوژن. تمامی حقوق محفوظ است.
           </p>
           
-          <div className="flex items-center gap-4">
+          {/* <div className="flex items-center gap-4">
             {socialLinks.map((social, index) => (
               <motion.a
                 key={index}
@@ -138,7 +140,7 @@ export function Footer() {
                 <social.icon className="w-5 h-5" />
               </motion.a>
             ))}
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>
