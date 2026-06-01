@@ -46,7 +46,7 @@ export function Features() {
               <span className="text-primary">دنیای دیجیتال</span>
             </h2>
             <p className="text-muted-foreground text-lg leading-relaxed mb-8">
-              با بیش از یک دهه تجربه در صنعت فناوری، ما به کسب‌وکارها کمک می‌کنیم 
+              با بیش از شش سال تجربه در صنعت فناوری در عرصه بین المللی، ما به کسب‌وکارها کمک می‌کنیم 
               تا با استفاده از راهکارهای نوآورانه، به اهداف خود دست یابند.
             </p>
 
@@ -105,8 +105,8 @@ export function Features() {
                   transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
                 >
                   <div className="text-center">
-                    <div className="text-5xl font-bold text-primary mb-1">۱۰+</div>
-                    <div className="text-muted-foreground text-sm">سال تجربه</div>
+                    <div className="text-5xl font-bold text-primary mb-1">۶ +</div>
+                    <div className="text-muted-foreground text-sm"> سال تجربه بین المللی</div>
                   </div>
                 </motion.div>
               </div>
