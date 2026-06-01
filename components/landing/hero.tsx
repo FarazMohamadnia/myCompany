@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft, Play } from "lucide-react";
+import { Link } from "react-router-dom";
+
 
 export function Hero() {
   return (
@@ -81,14 +83,17 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3 }}
           >
-            <Button size="lg" className="gap-2 px-8 py-6 text-lg">
-              شروع کنید
-              <ArrowLeft className="w-5 h-5" />
-            </Button>
-            <Button variant="outline" size="lg" className="gap-2 px-8 py-6 text-lg">
-              <Play className="w-5 h-5" />
-              مشاهده دمو
-            </Button>
+            <a href="tel:+989109275889">
+              <Button size="lg" className="gap-2 px-8 py-6 text-lg">
+                تماس با ما
+                <ArrowLeft className="w-5 h-5" />
+              </Button>
+            </a>
+            <Link to="/services">
+              <Button variant="outline" size="lg" className="gap-2 px-8 py-6 text-lg">
+                خدمات ما
+              </Button>
+            </Link>
           </motion.div>
 
           {/* Stats */}
@@ -99,9 +104,9 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.4 }}
           >
             {[
-              { value: "+۵۰۰", label: "پروژه موفق" },
+              { value: "+۱۰۰", label: "پروژه موفق" },
               { value: "+۲۰۰", label: "مشتری راضی" },
-              { value: "۱۰+", label: "سال تجربه" },
+              { value: "۶+", label: "سال تجربه" },
             ].map((stat, index) => (
               <motion.div
                 key={index}
