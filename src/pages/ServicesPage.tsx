@@ -41,11 +41,14 @@ export default function ServicesPage() {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-8 mb-14">
-            <div className="rounded-[32px] border border-primary/20 p-4 bg-white/10 shadow-lg shadow-primary/10">
-              <img
-                src="/placeholder-logo.png"
-                alt="خدمات تکنوژن"
-                className="w-28 h-28 object-contain rounded-3xl"
+            <div className="hidden md:block rounded-[32px] border border-primary/20 p-0 overflow-hidden shadow-lg shadow-primary/10">
+              <video
+                src="/robot.mp4"
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-28 h-28 md:w-32 md:h-32 lg:w-36 lg:h-36 object-cover rounded-3xl"
               />
             </div>
 
